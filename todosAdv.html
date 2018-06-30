@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Advanced Todo List</title>
+  <style type="text/css">
+    body{
+      font-size: 20px;
+    }
+    .selected{
+      color: green;
+    }
+    .done{
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  
+  <ul>
+    <li>Wash dog</li>
+    <li>Feed dog</li>
+    <li>Walk dog</li>
+  </ul>
+
+  <script type="text/javascript">
+
+    var lis = document.querySelectorAll("li");
+    // this gives a list of all the <li>s, so we need a loop 
+
+    for(var i = 0; i < lis.length; i++) {
+      // add hover effect for each <li>
+      lis[i].addEventListener("mouseover", function(){
+        this.classList.add("selected");
+      });
+      lis[i].addEventListener("mouseout", function(){
+        this.classList.remove("selected");
+      });
+      // add click effect
+      lis[i].addEventListener("click", function(){
+        this.classList.toggle("done");
+      });
+    }
+
+  </script>
+</body>
+</html>
